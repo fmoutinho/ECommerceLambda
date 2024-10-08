@@ -13,4 +13,8 @@
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.AspNetCoreServer.Hosting" Version="1.7.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\EcommerceLambda.Domain\EcommerceLambda.Domain.csproj" />
+    <ProjectReference Include="..\..\..\ECommerceLambda.Infrastructure\ECommerceLambda.Infrastructure.csproj" />
+  </ItemGroup>
 </Project>
