@@ -1,0 +1,25 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using ECommerceLambda.Application.Service;
+using EcommerceLambda.Domain.Entities.Request;
+
+namespace ECommerceLambda.API.Controllers
+{
+    public class RequestController : Controller
+    {
+        private readonly ILogger<RequestController> _logger;
+        private readonly IRequestService _requestService;
+
+        public RequestController(ILogger<RequestController> logger, IRequestService requestService)
+        {
+            _logger = logger;
+            _requestService = requestService;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendRequest([FromBody] Request request)
+        {
+            await _requestService.SendRequest(request);
+            return Ok();
+        }
+    }
+}

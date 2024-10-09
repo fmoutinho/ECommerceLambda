@@ -1,7 +1,7 @@
 ﻿using Amazon.DynamoDBv2.DataModel;
 using EcommerceLambda.Domain.Entities.Client;
 
-namespace ECommerceLambda.Infrastructure.Repositories
+namespace ECommerceLambda.Infrastructure.Persistence.Repositories
 {
     public class ClientRepository : IClientRepository
     {
@@ -14,7 +14,7 @@ namespace ECommerceLambda.Infrastructure.Repositories
 
         public async Task Create(Client client)
         {
-            await _dynamoDBContext.SaveAsync<Client>(client);
+            await _dynamoDBContext.SaveAsync(client);
         }
 
         public async Task Delete(string document)
@@ -29,7 +29,7 @@ namespace ECommerceLambda.Infrastructure.Repositories
 
         public async Task Update(Client client)
         {
-            await _dynamoDBContext.SaveAsync<Client>(client);
+            await _dynamoDBContext.SaveAsync(client);
         }
     }
 }
