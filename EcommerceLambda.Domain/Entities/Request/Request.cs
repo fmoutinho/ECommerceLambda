@@ -1,6 +1,4 @@
-﻿
-
-namespace EcommerceLambda.Domain.Entities.Request
+﻿namespace EcommerceLambda.Domain.Entities.Request
 {
     public class Request
     {

@@ -1,7 +1,7 @@
 using EcommerceLambda.Domain.Entities.Client;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ECommerceLambda.Controllers
+namespace ECommerceLambda.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

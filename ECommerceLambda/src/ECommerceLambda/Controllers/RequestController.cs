@@ -4,6 +4,8 @@ using EcommerceLambda.Domain.Entities.Request;
 
 namespace ECommerceLambda.API.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class RequestController : Controller
     {
         private readonly ILogger<RequestController> _logger;
