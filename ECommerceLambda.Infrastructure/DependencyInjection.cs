@@ -2,7 +2,7 @@
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.SQS;
 using EcommerceLambda.Domain.Entities.Client;
-using ECommerceLambda.Application.Service;
+using ECommerceLambda.Application.Abstractions;
 using ECommerceLambda.Infrastructure.Persistence.Repositories;
 using ECommerceLambda.Infrastructure.Service;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,7 +17,7 @@ namespace ECommerceLambda.Infrastructure
                 .AddDynamoDBContext()
                 .AddAmazonSQS()
                 .AddRepositories()
-                .AddServices();
+                .AddMessager();
 
             return services;
         }
@@ -42,9 +42,9 @@ namespace ECommerceLambda.Infrastructure
             return services;
         }
 
-        public static IServiceCollection AddServices(this IServiceCollection services)
+        public static IServiceCollection AddMessager(this IServiceCollection services)
         {
-            services.AddScoped<IRequestService, RequestService>();
+            services.AddScoped<IMessager, SQSMessagerService>();
             return services;
         }
     }

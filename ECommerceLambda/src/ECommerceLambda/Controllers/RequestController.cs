@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ECommerceLambda.Application.Service;
 using EcommerceLambda.Domain.Entities.Request;
+using ECommerceLambda.Application.Abstractions;
 
 namespace ECommerceLambda.API.Controllers
 {

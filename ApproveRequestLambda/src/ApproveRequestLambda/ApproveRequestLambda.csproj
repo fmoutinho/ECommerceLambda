@@ -14,5 +14,10 @@
     <PackageReference Include="Amazon.Lambda.Core" Version="2.2.0" />
     <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.1" />
     <PackageReference Include="Amazon.Lambda.SQSEvents" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ECommerceLambda.Application\ECommerceLambda.Application.csproj" />
+    <ProjectReference Include="..\..\..\ECommerceLambda.Infrastructure\ECommerceLambda.Infrastructure.csproj" />
   </ItemGroup>
 </Project>

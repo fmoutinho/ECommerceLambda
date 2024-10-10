@@ -1,20 +1,20 @@
 ﻿using Amazon.SQS;
 using Amazon.SQS.Model;
 using EcommerceLambda.Domain.Entities.Request;
-using ECommerceLambda.Application.Service;
+using ECommerceLambda.Application.Abstractions;
 using System.Text.Json;
 
 namespace ECommerceLambda.Infrastructure.Service
 {
-    public class RequestService : IRequestService
+    public class SQSMessagerService : IMessager
     {
         private readonly IAmazonSQS _amazonSQS;
-        public RequestService(IAmazonSQS amazonSQS)
+        public SQSMessagerService(IAmazonSQS amazonSQS)
         {
             _amazonSQS = amazonSQS;
         }
 
-        public async Task SendRequest(Request request)
+        public async Task Produce(Request request)
         {
             var messageRequest = new SendMessageRequest
             {
