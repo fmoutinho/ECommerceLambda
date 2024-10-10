@@ -18,7 +18,7 @@ namespace ECommerceLambda.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SendRequest([FromBody] Request request)
+        public async Task<IActionResult> Send([FromBody] Request request)
         {
             await _requestService.SendRequest(request);
             return Ok();

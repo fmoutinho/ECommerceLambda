@@ -16,14 +16,14 @@ namespace ECommerceLambda.API.Controllers
             _clientRepository = clientRepository;
         }
         [HttpPost]
-        public async Task<IActionResult> CreateClient(Client client)
+        public async Task<IActionResult> Create(Client client)
         {
             await _clientRepository.Create(client);
             return Ok();
         }
 
         [HttpGet("{document}")]
-        public async Task<IActionResult> GetClientByDocument(string document)
+        public async Task<IActionResult> GetByDocument(string document)
         {
             var client = await _clientRepository.GetByDocument(document);
             
@@ -34,13 +34,13 @@ namespace ECommerceLambda.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateClient(Client client)
+        public async Task<IActionResult> Update(Client client)
         {
             await _clientRepository.Update(client);
             return Ok();
         }
         [HttpDelete("{document}")]
-        public async Task<IActionResult> DeleteClient(string document)
+        public async Task<IActionResult> Delete(string document)
         {
             await _clientRepository.Delete(document);
             return Ok();
