@@ -17,16 +17,13 @@ namespace ApproveRequestLambda
 
         public Function()
         {
-            InitFunction();
-        }
-
-        private void InitFunction()
-        {
             var services = new ServiceCollection();
 
             services
                 .AddApplication()
                 .AddInfrastructure();
+
+            _serviceProvider = services.BuildServiceProvider();
         }
 
         public async Task FunctionHandler(SQSEvent input, ILambdaContext context)
